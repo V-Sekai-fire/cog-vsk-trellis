@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/MaxtirError/FlexiCubes.git
+	branch = main
+	commit = f97beb0dd3c6c68f3ab5696b6dcaf9af69f0514e
+	parent = 9912bb789cea40df43730a846cc7bbd7538ac4fc
+	method = merge
+	cmdver = 0.4.9

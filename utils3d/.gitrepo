@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/EasternJournalist/utils3d.git
+	branch = main
+	commit = b215339663b621422796743dcf099d557de48be7
+	parent = a6bbecf5bbd20eea777547cdf48101edc6a099fd
+	method = merge
+	cmdver = 0.4.9

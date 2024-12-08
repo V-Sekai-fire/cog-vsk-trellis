@@ -2,7 +2,7 @@ import torch
 from ...modules.sparse import SparseTensor
 from easydict import EasyDict as edict
 from .utils_cube import *
-from .flexicubes.flexicubes import FlexiCubes
+from ...flexicubes.flexicubes import FlexiCubes
 
 
 class MeshExtractResult:

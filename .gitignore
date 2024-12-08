@@ -397,3 +397,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 .cog
+output_combined.mp4
+
+output_no_background.png

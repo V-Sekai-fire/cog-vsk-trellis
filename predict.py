@@ -24,7 +24,6 @@ class PredictOutput(BaseModel):
     model_file: Path | None = None
     gaussian_ply: Path | None = None
 
-
 class Predictor(BasePredictor):
     def setup(self):
         """Load the model into memory to make running multiple predictions efficient"""
@@ -83,13 +82,13 @@ class Predictor(BasePredictor):
         ),
         mesh_simplify: float = Input(
             description="GLB Extraction - Mesh Simplification (only used if generate_model=True)", 
-            default=0.95,
-            ge=0.9,
+            default=0.65,
+            ge=0,
             le=0.98
         ),
         texture_size: int = Input(
             description="GLB Extraction - Texture Size (only used if generate_model=True)",
-            default=1024,
+            default=512,
             ge=512,
             le=2048
         )
@@ -158,6 +157,13 @@ class Predictor(BasePredictor):
         combined_path = None
         model_path = None
         gaussian_path = None
+
+        # Save Gaussian PLY if requested
+        if save_gaussian_ply:
+            self.logger.info("Saving Gaussian point cloud as PLY...")
+            gaussian_path = Path("output_gaussian.ply")
+            outputs['gaussian'][0].save_ply(str(gaussian_path))
+            self.logger.info("Gaussian PLY file saved successfully!")
 
         # Render videos if requested
         if generate_color or generate_normal:
